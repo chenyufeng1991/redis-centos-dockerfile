@@ -8,7 +8,9 @@ RUN yum install -y wget gcc && \
         yum install -y tar && \
         wget http://download.redis.io/redis-stable.tar.gz && \
         tar -xvzf redis-stable.tar.gz && \
-        mv redis-stable/ redis
+        mv redis-stable/ redis && \
+        rm -f redis-stable.tar.gz && \
+        yum clean all
 
 WORKDIR /home/redis
 
